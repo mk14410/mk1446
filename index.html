@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة إدارة الأجهزة | العراق</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Tajawal', sans-serif; background: #0f172a; color: white; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .btn-neon { background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%); transition: 0.3s; border: none; }
+        .btn-neon:hover { box-shadow: 0 0 20px rgba(0, 210, 255, 0.5); transform: scale(1.02); }
+        .input-dark { background: rgba(0,0,0,0.2); border: 1px solid #334155; border-radius: 10px; padding: 12px; color: white; width: 100%; outline: none; }
+        .input-dark:focus { border-color: #3b82f6; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body class="min-h-screen pb-10">
+
+    <div id="loginSection" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950 px-4">
+        <div class="glass p-8 rounded-3xl w-full max-w-md text-center">
+            <h2 class="text-2xl font-bold mb-6 text-blue-400">دخول المشرفين فقط</h2>
+            <input type="text" id="username" placeholder="اسم المستخدم" class="input-dark mb-4">
+            <input type="password" id="password" placeholder="كلمة المرور" class="input-dark mb-6">
+            <button onclick="login()" class="btn-neon w-full py-3 rounded-xl font-bold text-white">تسجيل الدخول</button>
+            <p id="loginError" class="text-red-500 mt-4 text-sm hidden">خطأ في البيانات! مسموح لـ 3 مشرفين فقط.</p>
+        </div>
+    </div>
+
+    <div id="mainContent" class="hidden container mx-auto px-4">
+        <header class="flex justify-between items-center py-8">
+            <h1 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">بوابة
